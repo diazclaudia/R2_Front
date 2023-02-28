@@ -1,0 +1,30 @@
+<form #f="ngForm" (submit)="login(f)">
+  user<input type="string" name="user" ngModel/>
+  pass<input type="string" name="pass" ngModel/>
+  <button>login</button>
+</form>
+<p>{{loginResult| json}}</p>
+
+<br><br>
+<button (click)="logout()">logout</button>
+<p>{{logoutResult| json}}</p>
+
+<br><br>
+<form #form="ngForm" (submit)="fibonacci(form)">
+    rows<input type="number" name="rows" ngModel/>
+    cols<input type="number" name="cols" ngModel/>
+    <button>Submit</button>
+  </form>
+
+<br><br>
+<p>{{info| json}}</p>
+  <div class="my-table-div">
+    <table class=" my-table " *ngFor="let row of info?.fibonacci_spiral">
+
+      <tr class="month-row" *ngFor="let col of row">
+       <td class="month-name">{{col}}</td>
+      </tr>
+    </table>
+  </div>
+
+
